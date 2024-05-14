@@ -13,7 +13,7 @@ import webbrowser
 import datetime
 from xlsxwriter import Workbook
 import xlsxwriter
-import gspread
+from streamlit_gsheets import GSheetsConnection
 
 #from aryballe_HT_Data import data_uploader
 LOGGER = get_logger(__name__)
