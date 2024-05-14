@@ -10,3 +10,4 @@ kaleido
 xlsxwriter
 reportlab
 streamlit
+gspread

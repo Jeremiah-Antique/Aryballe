@@ -13,7 +13,7 @@ import webbrowser
 import datetime
 from xlsxwriter import Workbook
 import xlsxwriter
-from streamlit_gsheets import GSheetsConnection
+import gspread
 
 #from aryballe_HT_Data import data_uploader
 LOGGER = get_logger(__name__)
@@ -666,7 +666,7 @@ df = conn.read()
 for row in df.itertuples():
     st.write(f"{row.name} has a :{row.pet}:")
 
-    
+
 #sidebar title
 st.sidebar.title("Select a function")
 #first checkbox for sensory panel upload
