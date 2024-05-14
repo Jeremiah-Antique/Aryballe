@@ -8,7 +8,6 @@ plotly>=5.0.0
 plotly.express
 kaleido
 xlsxwriter
-webbrowser
 datetime
 PIL
 io
