@@ -13,6 +13,7 @@ import webbrowser
 import datetime
 from xlsxwriter import Workbook
 import xlsxwriter
+from streamlit_gsheets import GSheetsConnection
 
 #from aryballe_HT_Data import data_uploader
 LOGGER = get_logger(__name__)
@@ -651,6 +652,21 @@ if 'reports' not in st.session_state:
 #title to main page
 with title_container:
     st.title("Aryballe Data Analysis")
+
+
+    #Testing Google Sheets connection
+    
+
+# Create a connection object.
+conn = st.connection("gsheets", type=GSheetsConnection)
+
+df = conn.read()
+
+# Print results.
+for row in df.itertuples():
+    st.write(f"{row.name} has a :{row.pet}:")
+
+    
 #sidebar title
 st.sidebar.title("Select a function")
 #first checkbox for sensory panel upload
