@@ -9,3 +9,4 @@ plotly.express
 kaleido
 xlsxwriter
 reportlab
+streamlit
