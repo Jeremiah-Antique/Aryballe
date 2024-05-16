@@ -661,7 +661,7 @@ with title_container:
 conn = st.connection("gsheets", type=GSheetsConnection)
 if st.button("read Sheet1"):
     df = conn.read(worksheet="Sheet1",ttl=5)
-st.write(df)
+    st.write(df)
 if st.button("New Worksheet"):
     conn.create(worksheet="Sheet2")
     st.success("Done!")
