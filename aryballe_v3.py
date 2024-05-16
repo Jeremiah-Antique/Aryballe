@@ -660,10 +660,16 @@ with title_container:
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read(spreadsheet="https://docs.google.com/spreadsheets/d/1Q1GmsvKjC5sXZgmpEUnisBSXXhQAKepaGyrPALavAJY/edit#gid=0",worksheet="Sheet1")
+df = conn.read(worksheet="Sheet1")
 st.write(df)
-
-
+if st.button("New Worksheet"):
+    conn.create(worksheet="Sheet2")
+    st.success("Done!")
+if st.button("Update"):
+    conn.update(worksheet="Sheet2",data=df)
+    st.success("done!")
+if st.button("sheet 2 post"):
+    conn.read(worksheet="Sheet2")
 #sidebar title
 st.sidebar.title("Select a function")
 #first checkbox for sensory panel upload
