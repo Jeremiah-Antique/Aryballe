@@ -660,11 +660,8 @@ with title_container:
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read()
-
-# Print results.
-for row in df.itertuples():
-    st.write(f"{row.name} has a :{row.pet}:")
+df = conn.read(spreadsheet="https://docs.google.com/spreadsheets/d/1Q1GmsvKjC5sXZgmpEUnisBSXXhQAKepaGyrPALavAJY/edit#gid=0",worksheet="Sheet1")
+st.write(df)
 
 
 #sidebar title
