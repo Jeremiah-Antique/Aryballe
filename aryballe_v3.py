@@ -659,17 +659,17 @@ with title_container:
 
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
-
-df = conn.read(worksheet="Sheet1")
+if st.button("read Sheet1"):
+    df = conn.read(worksheet="Sheet1",ttl=5)
 st.write(df)
 if st.button("New Worksheet"):
     conn.create(worksheet="Sheet2")
     st.success("Done!")
 if st.button("Update"):
-    conn.update(worksheet="Sheet2",data=df)
+    conn.update(worksheet="Sheet2",data=df,ttl=5)
     st.success("done!")
 if st.button("sheet 2 post"):
-    df1 = conn.read(worksheet="Sheet2")
+    df1 = conn.read(worksheet="Sheet2",ttl=5)
     st.write(df1)
 #sidebar title
 st.sidebar.title("Select a function")
