@@ -669,7 +669,8 @@ if st.button("Update"):
     conn.update(worksheet="Sheet2",data=df)
     st.success("done!")
 if st.button("sheet 2 post"):
-    conn.read(worksheet="Sheet2")
+    df1 = conn.read(worksheet="Sheet2")
+    st.write(df1)
 #sidebar title
 st.sidebar.title("Select a function")
 #first checkbox for sensory panel upload
